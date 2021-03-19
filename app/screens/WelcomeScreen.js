@@ -17,7 +17,7 @@ function WelcomeScreen({navigation}) {
             <Portlet 
                 title="Weather" 
                 subTitle="Get your weather"
-                onPress = {() => console.log("pressed weather")}
+                onPress = {() => navigation.navigate("Weather")}
             />
         </ImageBackground>
     );
