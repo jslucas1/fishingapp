@@ -4,6 +4,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import SafetyScreen from '../screens/SafetyScreen';
 import WeatherNavigator from '../navigation/WeatherNavigator';
+import TidesScreen from '../screens/TidesScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -18,19 +19,6 @@ const AppNavigator = () => (
                     <MaterialCommunityIcons name="home" color={color} size={size} />  
             }}
         />
-        {/* <Tab.Screen 
-            name="Weather" 
-            component={WeatherScreen} 
-            options = {({navigation, route}) => ({
-                tabBarButton: () => 
-                    <NewListingButton 
-                        onPress={() => navigation.navigate("ListingEdit")}
-                />,
-                tabBarIcon: ({color, size}) => (
-                    <MaterialCommunityIcons name="plus-circle" color={color} size={size} />
-                ),
-            })}
-        /> */}
         <Tab.Screen 
             name="Weather" 
             component={WeatherNavigator} 
@@ -46,6 +34,14 @@ const AppNavigator = () => (
             options = {{
                 tabBarIcon: ({color, size}) =>
                     <MaterialCommunityIcons name="safety-goggles" color={color} size={size} />
+            }}
+        />
+        <Tab.Screen 
+            name="Tide" 
+            component={TidesScreen} 
+            options = {{
+                tabBarIcon: ({color, size}) =>
+                    <MaterialCommunityIcons name="wave" color={color} size={size} />
             }}
         />
     </Tab.Navigator>
