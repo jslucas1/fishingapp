@@ -5,7 +5,6 @@ const getData = async ({URL, cacheKey, setData}) => {
         .then(res => res.json())
         .then(json => {
             cache.store(cacheKey, json);
-            console.log("result from tidedata call", json);
             const resultData = {
                 "resultOK": true,
                 ...json

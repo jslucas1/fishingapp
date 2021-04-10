@@ -16,7 +16,13 @@ export default function App() {
   const getLocation = async () => {
     const tempLocation = await locationStorage.getLocation();
     setUserLoc(tempLocation);
-    console.log("in the get location", tempLocation);
+    const tempAddressLookup = {
+      latitude: tempLocation.coords.latitude,
+      longitude: tempLocation.coords.longitude
+    }
+
+    const tempAddress = await locationStorage.getAddress(tempAddressLookup);
+    console.log("this should be my address", tempAddress);    
   }
 
   if(!isReady){

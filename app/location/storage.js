@@ -23,6 +23,12 @@ const storeLocation = async (userLocation) => {
     }
 }
 
+const getAddress = async (tempLocation) => {
+    console.log("in getAddress and sent this ", tempLocation);
+    return await Location.reverseGeocodeAsync(tempLocation);
+
+}
+
 const getLocation = async () => {
     try{
         const currentLoc = await useLocation();
@@ -42,4 +48,4 @@ const removeLocation = async () => {
     }
 }
 
-export default {storeLocation, removeLocation, getLocation}
+export default {storeLocation, removeLocation, getLocation, getAddress}
